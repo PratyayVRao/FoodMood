@@ -63,4 +63,4 @@ After a family health emergency involving diabetic ketoacidosis, the developer s
 
 ### Clone the repo:
 ```bash
-git clone https://github.com/yourusername/FoodMood-Frontend.git
+git clone https://github.com/Pratyay015/FoodMood-Frontend.git
