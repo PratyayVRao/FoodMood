@@ -41,14 +41,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   addOrganInteraction();
 
+  // Add the loading indicator element to the DOM (if not already in your HTML)
+  if (!document.getElementById('loading-indicator')) {
+    const loadingEl = document.createElement('div');
+    loadingEl.id = 'loading-indicator';
+    loadingEl.style.cssText = 'display:none; color:#006c67; font-weight:bold; margin-top:10px;';
+    loadingEl.textContent = 'Analyzing... Please wait.';
+    const form = document.querySelector('#food-form');
+    form.parentNode.insertBefore(loadingEl, form.nextSibling);
+  }
+
   const form = document.querySelector('#food-form');
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+
+    const loadingEl = document.getElementById('loading-indicator');
+    loadingEl.style.display = 'block'; // Show loading
 
     const food = document.querySelector('#food-input').value.trim();
     const condition = document.getElementById('condition-select').value;
     if (!food) {
       alert('Please enter a food!');
+      loadingEl.style.display = 'none'; // Hide loading
       return;
     }
 
@@ -73,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } catch (error) {
       alert('Error fetching organ scores: ' + error.message);
+    } finally {
+      loadingEl.style.display = 'none'; // Always hide loading when done
     }
   });
 
