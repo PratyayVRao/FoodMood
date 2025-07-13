@@ -59,7 +59,7 @@ After a family health emergency involving diabetic ketoacidosis, the developer s
 
 ---
 
-## 🧪 Run Locally
+## Run Locally
 
 ### Clone the repo:
 ```bash
