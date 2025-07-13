@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clearOrganSelection();
 
     try {
-      const res = await fetch('http://localhost:4000/analyze', {
+      const res = await fetch('https://foodmood-backend1.onrender.com/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ food, condition }),
@@ -192,7 +192,7 @@ function getBaseOrganNameFromVariant(variantId) {
 }
 
 async function fetchOrganExplanation(food, organ, condition) {
-  const res = await fetch('http://localhost:4000/organ-explanation', {
+  const res = await fetch('https://foodmood-backend1.onrender.com/organ-explanation', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ food, organ, condition }),
@@ -238,7 +238,7 @@ document.getElementById('chat-form').addEventListener('submit', async (e) => {
   input.value = '';
 
   try {
-    const res = await fetch('http://localhost:4000/chat', {
+    const res = await fetch('https://foodmood-backend1.onrender.com/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt: question, condition }),
