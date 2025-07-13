@@ -1,0 +1,229 @@
+/* ====== Base styles ====== */
+body {
+  font-family: 'Fredoka';
+  background: linear-gradient(to bottom, #e6fff9, #ffffff);
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  color: #006c67;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Fredoka';
+}
+
+input[type="text"] {
+  padding: 1rem;
+  width: 200px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #aaa;
+  margin-right: 0.5rem;
+}
+
+button {
+  padding: 1rem 1.4rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #006c67;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #004d4a;
+  scale: 1.05
+}
+
+.svg-container {
+  max-width: 300px;
+  margin: 2rem auto;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  transform: none !important;
+  transition: none !important;
+}
+
+#HumanOrgans, svg {
+  transform: none !important;
+  transition: none !important;
+}
+
+#HumanOrgans path {
+  transform: none !important;
+  transition: none !important;
+}
+
+#HumanOrgans > g {
+  transform-origin: center;
+  transform-box: fill-box;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  will-change: transform;
+  cursor: pointer;
+  transform: none;
+}
+
+/* Exclude skin group from hover scaling */
+#HumanOrgans > g:not(#Skin):hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px white);
+}
+
+
+
+
+/* ====== Modal styling ====== */
+#organ-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: auto; /* allow scrolling */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 30px 30px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 520px;
+  max-height: 80vh; /* max height 80% viewport */
+  overflow-y: auto; /* vertical scrollbar if needed */
+  box-shadow: 0 0 20px rgba(128, 0, 128, 0.7);
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #222;
+  position: relative;
+  text-align: left;
+}
+
+/* ====== Modal title ====== */
+.modal-title {
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-bottom: 12px;
+  color: purple;
+}
+
+/* ====== Modal close button outlined and always visible ====== */
+.modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-weight: bold;
+  font-size: 1.6em;
+  color: purple;
+  cursor: pointer;
+  user-select: none;
+  border: 2px solid purple;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  line-height: 28px;
+  text-align: center;
+  background: 006c67;
+  outline: none;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  z-index: 99999;
+}
+/* ====== Modal body ====== */
+.modal-body {
+  font-size: 1em;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  color: #333;
+}
+
+
+
+/* Chatbot modal — matches styling of other modals */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 30px 30px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 520px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(128, 0, 128, 0.7);
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #222;
+  position: relative;
+  text-align: left;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-weight: bold;
+  font-size: 1.6em;
+  color: purple;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  line-height: 28px;
+  text-align: center;
+  background: white;
+}
+
+.chat-log {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+#chat-input {
+  width: 75%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+
+#chat-form button {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  background-color: #006c67;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#chat-form button:hover {
+  background-color: #004d4a;
+}
+
